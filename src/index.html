@@ -1,13 +1,74 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <!-- support for mobile touch devices -->
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
-</head>
-<body>
-    <h1>Empty Page</h1>
-</body>
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <script src="bundle.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="all-clocks-container" id="allClocksContainer">
+        <div class="grid" id="clockContainer" draggable="true">
+          <div class="clock-container">
+            <div class="button-container">
+              <button id="modeButton">Mode</button>
+              <button id="increaseButton">Increase</button>
+              <button id="removeButton">X</button>
+            </div>
+            <div id="clock">
+              <span id="hours">00</span>:<span id="minutes">00</span>:<span
+                id="seconds"
+                >00</span
+              ><span id="suffix"></span>
+            </div>
+            <div class="button-container">
+              <button id="lightButton">Light</button>
+              <button id="formatButton">AM/PM - 24H</button>
+              <button id="resetButton">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-clock-container">
+        <button id="addClockButton">Add Clock</button>
+        <select id="timezoneDropdown">
+          <option value="0">GMT</option>
+          <option value="60">GMT+1</option>
+          <option value="120">GMT+2</option>
+          <option value="180">GMT+3</option>
+          <option value="240">GMT+4</option>
+          <option value="300">GMT+5</option>
+          <option value="360">GMT+6</option>
+          <option value="420">GMT+7</option>
+          <option value="480">GMT+8</option>
+          <option value="540">GMT+9</option>
+          <option value="600">GMT+10</option>
+          <option value="660">GMT+11</option>
+          <option value="720">GMT+12</option>
+          <option value="-60">GMT-1</option>
+          <option value="-120">GMT-2</option>
+          <option value="-180">GMT-3</option>
+          <option value="-240">GMT-4</option>
+          <option value="-300">GMT-5</option>
+          <option value="-360">GMT-6</option>
+          <option value="-420">GMT-7</option>
+          <option value="-480">GMT-8</option>
+          <option value="-540">GMT-9</option>
+          <option value="-600">GMT-10</option>
+          <option value="-660">GMT-11</option>
+          <option value="-720">GMT-12</option>
+        </select>
+        <select id="clockTypeDropdown">
+          <option value="digital">Digital Clock</option>
+          <option value="analog">Analog Clock</option>
+        </select>
+      </div>
+    </div>
+  </body>
 </html>
